@@ -1,0 +1,78 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  color: #142c54;
+  padding-top: 40px;
+  margin: 10px;
+}
+.profile-title {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+
+  height: 35px;
+}
+.profile-title > p {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.profile-back {
+  margin-right: 10px;
+  z-index: 91;
+  display: flex;
+}
+.profile-data {
+  width: 100%;
+  margin-top: 20px;
+}
+.profile-boxes {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.profile-box {
+  display: flex;
+  flex-direction: column;
+}
+.f-50 {
+  width: 48%;
+}
+.profile-edit {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+@media only screen and (min-width: 410px) {
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    outline: 1px solid #f4f4f4;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 5px;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    outline: 1px solid #f4f4f4;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+  }
+}

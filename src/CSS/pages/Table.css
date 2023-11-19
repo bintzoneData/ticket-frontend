@@ -1,0 +1,24 @@
+/* Table.css */
+.table-container {
+  overflow-x: auto; /* Add horizontal scrolling for small screens */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 6px;
+  }
+}

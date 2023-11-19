@@ -1,0 +1,149 @@
+.tickets {
+  display: flex;
+  justify-content: center;
+  color: #142c54;
+  padding-top: 50px;
+  margin: 10px;
+}
+
+.isloading-box {
+  z-index: 90;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: -30px;
+}
+.tickets-back {
+  z-index: 91;
+}
+.isloading-box > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+
+  text-align: center;
+}
+.tickets-title {
+  align-items: center;
+  margin: 0px 15px;
+}
+.tickets-title > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+.tickets-hide {
+  height: 10px;
+  font-size: 1px;
+  visibility: hidden;
+}
+.tickets-section {
+  width: 100%;
+  margin-top: 20px;
+  height: 100%;
+}
+.tickets-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tickets-Thead {
+  background-color: #f4f4f4;
+  height: 44px;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: black;
+
+  width: 100%;
+}
+.tickets-Tdata {
+  text-align: center;
+  border-radius: 10px;
+  height: 45px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  width: 100%;
+  border-bottom: 1px dotted gray;
+}
+.tickets-no-data {
+  display: flex;
+  padding-top: 40px;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100%;
+}
+.tickets-no-data > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.tickets-no-data-svg {
+  width: 200px;
+}
+@media only screen and (min-width: 768px) {
+  .tickets-card {
+    width: 800px;
+    outline: 1px solid #f4f4f4;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tickets-card {
+    width: 95%;
+    outline: 1px solid #f4f4f4;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  .tickets-Thead {
+    background-color: #f4f4f4;
+    height: 30px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    color: black;
+  }
+  .tickets-Tdata {
+    text-align: center;
+    border-radius: 10px;
+    height: 45px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px dotted gray;
+  }
+  .tickets-Tdata > td {
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .tickets {
+    padding-top: 20px;
+  }
+}

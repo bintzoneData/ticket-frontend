@@ -1,0 +1,368 @@
+.main-new-Thicket {
+  display: flex;
+  justify-content: center;
+  color: #142c54;
+}
+
+.my-tickets-loading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.tickets-choose {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tickets-choose > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+.new-ticket-back {
+  margin: 10px;
+  position: absolute;
+  width: 97%;
+  display: flex;
+  justify-content: flex-end;
+}
+.new-Ticket > h1 {
+  margin: 10px;
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+.new-Ticket > h2 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: #828282;
+}
+.tickets-polite {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.tickets-polite > span {
+  color: blue;
+}
+.tickets-create-btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.NT-boxes-solo {
+  max-width: 100%;
+  display: flex;
+}
+.all-NT-input-solo {
+}
+
+.NT-box > input {
+  flex-grow: 1;
+}
+
+.year {
+  flex-grow: 1;
+}
+textarea {
+  resize: none;
+  height: 60px;
+}
+.new-Ticket-btn-box {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.tickets-btn1 {
+  flex-basis: 30%;
+}
+.tickets-btn2 {
+  flex-grow: 1;
+}
+.tickets-title {
+  display: flex;
+  justify-content: space-between;
+}
+.NT-boxes2 {
+  width: fit-content;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.NT-box2 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.NT-box2 > select {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+.NT-box2 > select option {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+}
+.NT-box > select {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+.NT-box > select option {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+}
+.NT-box > input {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+.tickets-create-btn > button {
+  width: 170px;
+  height: 40px;
+}
+.tickets-loading-box {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.tickets-loading-box > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  margin-top: 15px;
+}
+.new-ticket-change {
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  text-transform: capitalize;
+}
+.new-ticket-change > button {
+  height: 35px;
+  font-size: 16px;
+}
+
+.tickets-radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.tickets-radio-inputs .tickets-radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.tickets-radio-inputs .tickets-radio input {
+  display: none;
+}
+.tickets-radio-inputs .tickets-radio span {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: #828282;
+  font-weight: 600;
+}
+.tickets-radio-inputs .tickets-radio .tickets-name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.tickets-radio-inputs .tickets-radio input:checked + .tickets-name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .new-Ticket {
+    margin: 10px;
+    margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+
+    outline: 1px solid #142c54;
+    position: relative;
+    width: 750px;
+  }
+
+  .NT-box-solo {
+    flex-grow: 1;
+  }
+  .NT-boxes {
+    width: fit-content;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .NT-box {
+    margin: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .NT-box > input {
+    flex-grow: 1;
+  }
+
+  #purchase_date {
+    min-height: 25px;
+    background-color: white;
+    min-width: 96%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .new-Ticket {
+    margin: 10px;
+    margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+
+    outline: 1px solid #142c54;
+    position: relative;
+    width: 95%;
+  }
+
+  .all-NT-input {
+  }
+  .new-Ticket > h1 {
+    text-transform: capitalize;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .NT-boxes-solo {
+    width: 100%;
+  }
+  .NT-box-solo {
+    width: 100%;
+  }
+  .NT-boxes {
+  }
+  .NT-box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .NT-box > input {
+    flex-grow: 1;
+  }
+
+  #purchase_date {
+    min-height: 25px;
+    background-color: white;
+    min-width: 96%;
+  }
+  .NT-box2 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .tickets-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .tickets-back {
+    position: absolute;
+    right: 10px;
+  }
+  .tickets-title > h1 {
+    align-self: flex-start;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .new-ticket-back {
+    margin: 10px;
+    right: 0px;
+    position: absolute;
+    width: 97%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .new-Ticket > h1 {
+    text-transform: capitalize;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 380px) {
+  .new-Ticket {
+    margin: 10px;
+    margin-top: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    border-radius: 10px;
+
+    outline: 1px solid #142c54;
+    position: relative;
+    width: 95%;
+  }
+  .tickets-polite {
+    text-transform: capitalize;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+  }
+  .new-Ticket > h1 {
+    margin: 10px;
+    text-transform: capitalize;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  .new-Ticket > h2 {
+    text-transform: capitalize;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    color: #828282;
+    font-size: 1rem;
+  }
+  textarea {
+    resize: none;
+    height: 40px;
+  }
+}

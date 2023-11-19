@@ -1,0 +1,127 @@
+.the-card {
+  width: 700px;
+  outline: 1px solid #f4f4f4;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.the-header-title {
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px dashed navy;
+  display: flex;
+  justify-content: space-between;
+}
+.the-header-title > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+.the-boxes {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}
+.the-box-full {
+  margin: 5px;
+  flex-grow: 1;
+}
+.the-box {
+  margin: 5px;
+  width: 30%;
+}
+.the-box:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.the-box:nth-child(2) {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.the-box:nth-child(3) {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+}
+.the-box-label {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  text-align: center;
+}
+.the-box-p {
+  margin-top: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  color: gray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+.the-box-full-label {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+
+  position: relative;
+}
+.the-box-full-p {
+  margin-top: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  color: gray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.green {
+  color: #04fc44;
+}
+.the-btn {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  align-self: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+.the-btn:hover {
+  opacity: 78%;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.the-btn:disabled:hover {
+  opacity: 100%;
+  border-radius: 4px;
+  transition: 0s;
+  cursor: auto;
+}

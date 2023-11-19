@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding: 0 0px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.home-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.home-box-normal {
+  background-color: white;
+}
+.home-box-red {
+  background-color: red;
+}
+.home-box {
+  height: 200px;
+  width: 260px;
+  padding: 10px;
+  margin: 10px;
+
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.home-box:hover {
+  background-color: aliceblue;
+  scale: 1;
+}
+.home-box > h1 {
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.home-box > div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-box > div > p {
+  font-size: 100px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+}
+
+.home-box-svg {
+  width: 95%;
+  height: 120px;
+}
+/* @media only screen and (max-width: 365px) { */

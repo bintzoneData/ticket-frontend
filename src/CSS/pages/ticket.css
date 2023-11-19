@@ -1,0 +1,83 @@
+.main-ticket {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+.ticket-id-box {
+  display: flex;
+  gap: 5px;
+  margin: 10px;
+}
+.ticket-id-box > p {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.ticket-id-box > h2 {
+  font-size: 12px;
+  color: gray;
+}
+.one-ticket-header {
+  line-height: 0.6em;
+}
+.one-ticket-data {
+  line-height: 1.6rem;
+}
+
+.one-ticket-data > label {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+.one-ticket-data > p {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 17px;
+  color: gray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+.one-ticket-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+.one-ticket-details {
+  border-bottom: 1px dashed black;
+}
+.ticket-stage-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+}
+.stage-messsage {
+  font-weight: 600;
+  font-size: 17px;
+  color: gray;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin-top: 5px;
+}
+.c-green {
+  color: #04fc44;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+.c-red {
+  color: #f80404;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-size: 18px;
+}

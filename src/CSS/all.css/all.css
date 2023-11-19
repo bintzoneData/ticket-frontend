@@ -1,0 +1,248 @@
+.all-T-c {
+  text-align: center;
+}
+.all-s18px {
+  font-size: 18px;
+}
+.all-s25px {
+  font-size: 25px;
+}
+.all-FAC {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.all-TT-cap {
+  text-transform: capitalize;
+}
+.all-hidden {
+  visibility: hidden;
+}
+/* colors */
+.all-c-g {
+  color: #828282;
+}
+.all-c-red {
+  color: red;
+}
+.all-c-green {
+  color: #04fc04;
+}
+/* fonts */
+.all-fz-25px {
+  font-size: 25px;
+}
+.all-fz-18px {
+  font-size: 18px;
+}
+/* width */
+.all-W-fit {
+  width: fit-content;
+}
+.all-W-100pc {
+  width: 100%;
+}
+.all-W-125px {
+  width: 125px;
+}
+.all-W-180px {
+  width: 180px;
+  font-size: 18px;
+}
+.all-W-190px {
+  width: 190px;
+  font-size: 18px;
+}
+.all-W-200px {
+  width: 200px;
+  font-size: 18px;
+}
+.all-W-98pc {
+  width: 98%;
+}
+
+/* hight */
+.all--10px {
+  padding-top: -10px;
+}
+.all-H-40px {
+  height: 40px;
+}
+.all-H-25px {
+  height: 25px;
+}
+.all-H-36px {
+  height: 36px;
+}
+.all-H-36px {
+  height: 36px;
+}
+.all-H-34px {
+  height: 34px;
+}
+.all-H-30px {
+  height: 30px;
+}
+/* backgorund */
+.all-B-green {
+  background-color: #048c04;
+  color: white;
+  border: 1px solid#048C04;
+}
+.all-B-orange {
+  background-color: orange;
+  color: white;
+  border: 1px solid orange;
+}
+.all-B-disabled {
+  background-color: #dcdcdc;
+}
+.all-B-red {
+  background-color: #f80404;
+  border: 1px solid #f80404;
+  color: white;
+}
+
+.all-B-navy {
+  background-color: #142c54;
+  color: white;
+  border: 1px solid #142c54;
+}
+.all-B-main {
+  background-color: #0474bc;
+  color: white;
+  border: 1px solid #0474bc;
+}
+/* all box */
+.all-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+.m-top15 {
+  margin-top: 15px;
+}
+
+.all-box {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+  margin-bottom: 5px;
+}
+.all-box-full {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+/* namees  */
+.all-name-label {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.all-name {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+/* form-input */
+
+.all-form-label {
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.all-form-name {
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.all-form-input {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 4px;
+}
+.all-f-center {
+  display: flex;
+  justify-content: center;
+  all: unset;
+}
+.all-form-input:focus {
+  outline-color: #0474bc;
+}
+.all-form-input:disabled {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 5px;
+
+  border-radius: 4px;
+  background-color: gainsboro;
+}
+/* btns */
+.all-btn-submit {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all-btn-submit:hover {
+  opacity: 78%;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.all-btn-submit:disabled:hover {
+  opacity: 100%;
+  border-radius: 4px;
+  transition: 0s;
+  cursor: auto;
+}
+/* table */
+.all-T {
+  border-spacing: 0px;
+  border-collapse: separate;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 600;
+  width: 600px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+}
+.all-T-data-input-box {
+  width: 100%;
+  display: flex;
+}
+.all-T-head > th {
+  background-color: #0474bc;
+  text-transform: capitalize;
+  color: white;
+  font-weight: 600;
+  border-left: 1px solid white;
+}
+.all-T-head > th:first-child {
+  border-left: 1px solid black;
+}
+
+.all-T-head > th:last-child {
+  border-right: 1px solid black;
+}
+
+.all-T-data > td {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-top: none;
+}
+.all-T-data > td:first-child {
+  border-right: none;
+}
+
+.all-T-data > td:last-child {
+  border-right: 1px solid #0474bc;
+  width: 130px;
+}
