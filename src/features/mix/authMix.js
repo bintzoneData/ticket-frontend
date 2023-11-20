@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 const CateData = JSON.parse(localStorage.getItem('CateData'));
 const ItemsData = JSON.parse(localStorage.getItem('ItemsData'));
-const API_URL1 = 'api/categories';
-
+const API_URL1 = `${process.env.REACT_APP_MAIN_API}/categories/`;
+const API = `${process.env.REACT_APP_MAIN_API}`;
 const initialState = {
   CateData: CateData ? CateData : null,
   ItemsData: ItemsData ? ItemsData : null,
@@ -24,7 +24,7 @@ const fetchCate = async () => {
   return response.data;
 };
 const fetchItems = async (query) => {
-  const response = await axios.get(`api/items?category=${query}`);
+  const response = await axios.get(`${API}/items?category=${query}`);
   if (response.data) {
     localStorage.setItem('CateData', JSON.stringify(response.data));
   }

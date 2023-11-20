@@ -4,21 +4,16 @@ import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa';
 
 import { toast } from 'react-toastify';
 import '../CSS/pages/ticket.css';
-import { getTicket, closeTicket } from '../features/tickets/ticketSlice';
+import { getTicket, reset, closeTicket } from '../features/tickets/ticketSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { auth, db } from '../firebase.config';
 import {
   collection,
-  addDoc,
   where,
-  serverTimestamp,
   onSnapshot,
   query,
-  orderBy,
   doc,
-  setDoc,
-  getDoc,
-  getDocs,
+  deleteDoc,
 } from 'firebase/firestore';
 import { createTicket } from '../features/tickets/ticketSlice';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -26,6 +21,9 @@ import ButtonBack from '../components/ButtonBack';
 import Kspinner from '../assets/Kspinner';
 import BookSpinner from '../assets/BookSpinner';
 function Ticket() {
+  const { isSuccess, isLoading, created } = useSelector(
+    (state) => state.ticket
+  );
   const [ticket, setTicket] = useState({});
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -49,8 +47,13 @@ function Ticket() {
     });
     return () => unsuscribe();
   }, []);
-  const onSubmit = () => {
-    console.log(ticket);
+  const deleteRequest = async () => {
+    setLoading(true);
+
+    setLoading(false);
+  };
+  const onSubmit = async () => {
+    setLoading(true);
     dispatch(
       createTicket({
         product: ticket.product,
@@ -58,17 +61,20 @@ function Ticket() {
         purchase_date: ticket.purchase_date,
         note: ticket.note,
         serial: ticket.serial,
-        clientId: ticket.owner,
+        clientId: ticket.clientId,
       })
     )
       .unwrap()
-      .then(() => {
+      .then(async () => {
         // We got a good response so navigate the user
-        navigate('/tickets');
+        await deleteDoc(doc(db, 'tickets', ticket.id));
+        navigate('/request');
+        setLoading(false);
         toast.success('New ticket created!');
       })
       .catch(toast.error);
   };
+
   return (
     <div className='tickets'>
       <main className='the-card'>
@@ -78,7 +84,7 @@ function Ticket() {
             <ButtonBack url={'/request'} />
           </div>
         </header>
-        {loading ? (
+        {loading || isLoading ? (
           <div className='isloading-box'>
             <BookSpinner />
             <h1>please wait</h1>
@@ -90,13 +96,13 @@ function Ticket() {
                 <div className='the-box'>
                   <div className='the-box-data'>
                     <label className='the-box-label '>client name </label>
-                    <p className='the-box-p'>{ticket && ticket.name}</p>
+                    <p className='the-box-p'>{ticket && ticket.client}</p>
                   </div>
                 </div>
                 <div className='the-box'>
                   <div className='the-box-data'>
                     <label className='the-box-label '>phone no</label>
-                    <p className='the-box-p'>{ticket && ticket.phone}</p>
+                    <p className='the-box-p'>{ticket && ticket.phoneNo}</p>
                   </div>
                 </div>
                 <div className='the-box'>

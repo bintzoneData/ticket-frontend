@@ -25,7 +25,7 @@ function Request() {
   useEffect(() => {
     setloading(true);
     const docRef = collection(db, 'tickets');
-    const queryMessages = query(docRef, where('owner', '==', user._id));
+    const queryMessages = query(docRef, where('clientId', '==', user._id));
     const unsuscribe = onSnapshot(queryMessages, (snapshot) => {
       let items = [];
       snapshot.forEach((doc) => {
@@ -81,8 +81,8 @@ function Request() {
                   className='request-list-box'
                 >
                   <div className='request-details'>
-                    <h1>{ticket.name}</h1>
-                    <p>{ticket.phone}</p>
+                    <h1>{ticket.client}</h1>
+                    <p>{ticket.phoneNo}</p>
                   </div>
                   <div className='request-details'>
                     <h1>{ticket.product}</h1>

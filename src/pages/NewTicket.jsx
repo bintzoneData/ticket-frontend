@@ -7,6 +7,9 @@ import {
   serverTimestamp,
   collection,
   addDoc,
+  query,
+  where,
+  onSnapshot,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase.config';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -20,7 +23,7 @@ import { toast } from 'react-toastify';
 import { useRef } from 'react';
 function NewTicket() {
   const ref = useRef();
-
+  const [Dlength, setDlength] = useState('');
   const [category, SetCategory] = useState('');
   const [ready, setReady] = useState(false);
   const [formData, setFormData] = useState({
@@ -52,7 +55,11 @@ function NewTicket() {
     try {
       const formDataCopy = { ...formData };
       formDataCopy.createdAt = serverTimestamp();
-      formDataCopy.owner = user._id;
+      formDataCopy.clientId = user._id;
+      formDataCopy.client = user.name + ' ' + user.surname;
+      formDataCopy.category = category;
+      formDataCopy.phoneNo = user.phoneNo;
+      formDataCopy.requestId = `${user._id}R${Dlength}`;
       const docref = collection(db, 'tickets');
       await addDoc(docref, formDataCopy);
       navigate('/tickets');
@@ -61,23 +68,6 @@ function NewTicket() {
       toast.dismiss();
       toast.error('Creating Rejected');
     }
-    // console.log(formData);
-    // dispatch(
-    //   createTicket({
-    //     product,
-    //     problem,
-    //     purchase_date,
-    //     note,
-    //     serial,
-    //   })
-    // )
-    //   .unwrap()
-    //   .then(() => {
-    //     // We got a good response so navigate the user
-    //     navigate('/tickets');
-    //     toast.success('New ticket created!');
-    //   })
-    //   .catch(toast.error);
   };
   const onCreate = () => {
     if (category !== '') {
@@ -85,7 +75,18 @@ function NewTicket() {
       dispatch(getItems(category));
     }
   };
-
+  useEffect(() => {
+    const docRef = collection(db, 'tickets');
+    const queryMessages = query(docRef, where('clientId', '==', user._id));
+    const unsuscribe = onSnapshot(queryMessages, (snapshot) => {
+      let items = [];
+      snapshot.forEach((doc) => {
+        items.push({ ...doc.data(), id: doc.id });
+      });
+      setDlength(items.length);
+    });
+    return () => unsuscribe();
+  }, []);
   useEffect(() => {
     dispatch(getCategories());
   }, []);
@@ -181,7 +182,7 @@ function NewTicket() {
                   <option value=''>choose</option>
                   {itemD &&
                     itemD.map((cate) => (
-                      <option value={cate.code} key={cate._id}>
+                      <option value={cate.description} key={cate._id}>
                         {cate.description}
                       </option>
                     ))}
