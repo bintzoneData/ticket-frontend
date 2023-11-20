@@ -69,7 +69,6 @@ function Tickets() {
       });
 
       setTicketsData(items);
-      console.log(items);
       setTimeout(() => {
         setloading(false);
       }, 1000);
