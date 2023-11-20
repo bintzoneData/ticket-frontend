@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = `${process.env.REACT_APP_MAIN_API}/tickets/`;
+const API_URL = '/api/tickets/';
 const createTicket = async (ticketData, token) => {
   const config = {
     headers: {
@@ -15,10 +15,7 @@ const getTickets = async (query, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(
-    `${process.env.REACT_APP_MAIN_API}/tickets?process=${query}`,
-    config
-  );
+  const response = await axios.get(`${API_URL}?process=${query}`, config);
   if (response.data) {
     localStorage.setItem('Tickets', JSON.stringify(response.data));
   }
