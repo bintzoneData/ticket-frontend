@@ -12,6 +12,7 @@ import Ticket from './pages/Ticket';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Request from './pages/Request';
+import ViewTicket from './pages/ViewTicket';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path='/ticket/:id' element={<PrivateRoute />}>
               <Route path='/ticket/:id' element={<Ticket />} />
+            </Route>
+            <Route path='/viewticket/:id' element={<PrivateRoute />}>
+              <Route path='/viewticket/:id' element={<ViewTicket />} />
             </Route>
             <Route path='/profile' element={<PrivateRoute />}>
               <Route path='/profile' element={<Profile />} />

@@ -128,7 +128,10 @@ function ViewTicket() {
                   <label className='the-box-label-2 l'>
                     stage type <FaQuestionCircle className='fa-q' />
                   </label>
-                  <p className='the-box-p-2'> {ticket && ticket.stage.type}</p>
+                  <p className='the-box-p-2'>
+                    {' '}
+                    {ticket.stage && ticket.stage.type}
+                  </p>
                 </div>
 
                 <div className='the-box-2'>
@@ -142,7 +145,7 @@ function ViewTicket() {
                   <div className='the-box-data'>
                     <label className='the-box-full-label '>message </label>
                     <p className='the-box-full-p'>
-                      {ticket && ticket.stage.message}
+                      {ticket.stage && ticket.stage.message}
                     </p>
                   </div>
                 </div>
