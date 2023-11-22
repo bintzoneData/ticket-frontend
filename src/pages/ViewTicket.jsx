@@ -1,51 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa';
-
-import { toast } from 'react-toastify';
+import { FaQuestionCircle } from 'react-icons/fa';
 import '../CSS/pages/ticket.css';
-import { getTicket, reset, closeTicket } from '../features/tickets/ticketSlice';
-import { v4 as uuidv4 } from 'uuid';
-import { auth, db } from '../firebase.config';
-import {
-  collection,
-  where,
-  onSnapshot,
-  query,
-  doc,
-  deleteDoc,
-} from 'firebase/firestore';
-import { createTicket } from '../features/tickets/ticketSlice';
-import { useNavigate, useParams } from 'react-router-dom';
+import { getTicket } from '../features/tickets/ticketSlice';
+
+import { useParams } from 'react-router-dom';
 import ButtonBack from '../components/ButtonBack';
-import Kspinner from '../assets/Kspinner';
 import BookSpinner from '../assets/BookSpinner';
 function ViewTicket() {
-  const { ticket, isSuccess, isLoading, created } = useSelector(
-    (state) => state.ticket
-  );
+  const { ticket, isLoading } = useSelector((state) => state.ticket);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const params = useParams();
-  const navigate = useNavigate();
   const options = {
     weekday: 'short',
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
   };
-  //   useEffect(() => {
-  //     const docRef = collection(db, 'tickets');
-  //     const queryMessages = query(docRef, where('requestId', '==', params.id));
-  //     const unsuscribe = onSnapshot(queryMessages, (snapshot) => {
-  //       let items = [];
-  //       snapshot.forEach((doc) => {
-  //         setTicket({ ...doc.data(), id: doc.id });
-  //       });
-  //       setLoading(false);
-  //     });
-  //     return () => unsuscribe();
-  //   }, []);
   useEffect(() => {
     dispatch(getTicket(params.id));
   }, []);
@@ -56,7 +28,7 @@ function ViewTicket() {
     if (!isLoading) {
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 1500);
     }
   }, [isLoading]);
   return (
@@ -136,7 +108,15 @@ function ViewTicket() {
 
                 <div className='the-box-2'>
                   <label className='the-box-label-2 '>warranty status</label>
-                  <p className='the-box-p-2 green'>active</p>
+                  <p
+                    className={`the-box-p-3 ${
+                      ticket.warranty ? 'green' : 'c-red'
+                    }`}
+                  >
+                    {ticket.warranty && ticket.warranty
+                      ? 'active'
+                      : ' inactive'}
+                  </p>
                 </div>
               </div>
               {/* {message} */}

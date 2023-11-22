@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
-
+.all-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .home {
   display: flex;
+  margin-top: 50px;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
@@ -13,57 +18,152 @@
   padding: 0 0px;
   font-family: 'Ubuntu', sans-serif;
 }
-.home-boxes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.home-box-normal {
-  background-color: white;
-}
-.home-box-red {
-  background-color: red;
-}
-.home-box {
-  height: 200px;
-  width: 260px;
-  padding: 10px;
-  margin: 10px;
-
-  border-radius: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-.home-box:hover {
-  background-color: aliceblue;
-  scale: 1;
-}
-.home-box > h1 {
-  text-transform: capitalize;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 2em;
-  text-align: center;
-  letter-spacing: 1px;
-}
-.home-box > div {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.home-box > div > p {
-  font-size: 100px;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  font-family: 'Ubuntu', sans-serif;
+h1,
+h2,
+h3 {
   font-weight: 600;
+  margin-bottom: 10px;
+}
+.heading h1 {
+  font-size: 5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+.heading p {
+  text-align: center;
+  color: #828282;
+}
+.Home-btn {
+  width: 400px;
+  height: 40px;
+  font-size: 22px;
+  text-decoration: none;
+  gap: 10px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  margin: 15px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.Home-btn:hover {
+  background-color: gainsboro;
+  color: black;
+  border: 2px solid grey;
+}
+.Home-btn-2 {
+  width: 400px;
+  height: 40px;
+  font-size: 22px;
+  text-decoration: none;
+  gap: 10px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  background-color: black;
+  border: 2px solid black;
+  color: white;
+}
+.Home-btn-2:hover {
+  background-color: gainsboro;
+  color: black;
+  border: 2px solid grey;
+}
+@media only screen and (max-width: 768px) {
+  .heading h1 {
+    font-size: 4rem;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .heading p {
+    text-align: center;
+    color: #828282;
+  }
+  .Home-btn {
+    width: 300px;
+    height: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    gap: 10px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  .Home-btn:hover {
+    background-color: gainsboro;
+    color: black;
+    border: 2px solid grey;
+  }
+  .Home-btn-2 {
+    width: 300px;
+    height: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    gap: 10px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+  }
+  .Home-btn-2:hover {
+    background-color: gainsboro;
+    color: black;
+    border: 2px solid grey;
+  }
 }
 
-.home-box-svg {
-  width: 95%;
-  height: 120px;
+@media only screen and (max-width: 365px) {
+  .heading h1 {
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .heading p {
+    text-align: center;
+    color: #828282;
+  }
+  .Home-btn {
+    width: 300px;
+    height: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    gap: 10px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  .Home-btn:hover {
+    background-color: gainsboro;
+    color: black;
+    border: 2px solid grey;
+  }
+  .Home-btn-2 {
+    width: 300px;
+    height: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    gap: 10px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+  }
+  .Home-btn-2:hover {
+    background-color: gainsboro;
+    color: black;
+    border: 2px solid grey;
+  }
 }
-/* @media only screen and (max-width: 365px) { */

@@ -248,12 +248,11 @@ textarea {
 @media only screen and (max-width: 768px) {
   .new-Ticket {
     margin: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-color: white;
     border-radius: 10px;
-
     outline: 1px solid #142c54;
     position: relative;
     width: 95%;

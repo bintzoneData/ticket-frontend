@@ -97,6 +97,14 @@
     'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
+.the-box-p-3 {
+  margin-top: 3px;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
 .the-box-p {
   margin-top: 3px;
   text-transform: capitalize;

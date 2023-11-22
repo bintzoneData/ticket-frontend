@@ -5,7 +5,25 @@
   padding-top: 50px;
   margin: 10px;
 }
+.active {
+  color: #04fc44;
+}
+.ready {
+  color: #04fc44;
+}
+.closed {
+  color: #f80404;
+}
+.rejected {
+  color: #f80404;
+}
+.waiting {
+  color: #fbac08;
+}
 
+.complete {
+  color: #142c54;
+}
 .isloading-box {
   z-index: 90;
   position: absolute;
@@ -16,7 +34,6 @@
   align-items: center;
   flex-direction: column;
   gap: 15px;
-  margin-top: -30px;
 }
 .tickets-back {
   z-index: 91;
@@ -92,6 +109,11 @@
 .tickets-no-data-svg {
   width: 200px;
 }
+.td-center {
+  display: flex;
+
+  justify-content: center;
+}
 @media only screen and (min-width: 768px) {
   .tickets-card {
     width: 800px;
@@ -108,6 +130,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .tickets-changes {
+    margin-top: 10px;
+  }
   .tickets-card {
     width: 95%;
     outline: 1px solid #f4f4f4;

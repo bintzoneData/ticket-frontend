@@ -21,6 +21,7 @@ import { createTicket } from '../features/tickets/ticketSlice';
 import { getCategories, getItems } from '../features/mix/authMix';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
+import BookSpinner from '../assets/BookSpinner';
 function NewTicket() {
   const ref = useRef();
   const [Dlength, setDlength] = useState('');
@@ -48,9 +49,11 @@ function NewTicket() {
       [e.target.id]: e.target.value,
     }));
   };
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const onSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const formDataCopy = { ...formData };
@@ -68,6 +71,7 @@ function NewTicket() {
       toast.dismiss();
       toast.error('Creating Rejected');
     }
+    setLoading(false);
   };
   const onCreate = () => {
     if (category !== '') {
@@ -114,9 +118,30 @@ function NewTicket() {
   return (
     <div className='main-new-Thicket'>
       <div className='new-Ticket'>
-        {isLoading1 ||
-          (isLoading && <div className='tickets-loading-box'></div>)}
-        {isLoading2 && <div className='tickets-loading-box'></div>}
+        {isLoading && (
+          <div className='tickets-loading-box'>
+            <BookSpinner />
+            <h1>please wait</h1>
+          </div>
+        )}
+        {isLoading1 && (
+          <div className='tickets-loading-box'>
+            <BookSpinner />
+            <h1>please wait</h1>
+          </div>
+        )}
+        {isLoading2 && (
+          <div className='tickets-loading-box'>
+            <BookSpinner />
+            <h1>please wait</h1>
+          </div>
+        )}
+        {loading && (
+          <div className='tickets-loading-box'>
+            <BookSpinner />
+            <h1>please wait</h1>
+          </div>
+        )}
         <div className='new-ticket-back'>
           <ButtonBack url={'/'} />
         </div>

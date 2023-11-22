@@ -1,36 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import '../CSS/pages/tickets.css';
 import { Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-import { auth, db } from '../firebase.config';
-import {
-  collection,
-  addDoc,
-  where,
-  serverTimestamp,
-  onSnapshot,
-  query,
-  orderBy,
-  doc,
-  setDoc,
-  getDoc,
-  getDocs,
-} from 'firebase/firestore';
+import { db } from '../firebase.config';
+import { collection, where, onSnapshot, query } from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 import ButtonBack from '../components/ButtonBack';
 import { ReactComponent as SadSvg } from '../assets/Sad.svg';
 import { ReactComponent as SmileSvg } from '../assets/Smile.svg';
-import { FaFrown, FaSadCry, FaSadTear } from 'react-icons/fa';
 import BookSpinner from '../assets/BookSpinner';
-import Kspinner from '../assets/Kspinner';
 import { getTickets } from '../features/tickets/ticketSlice';
 import { toast } from 'react-toastify';
-import { set } from 'mongoose';
 function Tickets() {
-  const [isref, setiSREF] = useState(false);
   const { tickets, isError, isSuccess, isLoading, message } = useSelector(
     (state) => state.ticket
   );
+  const [activeClass, setActiveClass] = useState('all-f-center');
   const [closedData, setClosedData] = useState([]);
   const [ticketsData, setTicketsData] = useState([]);
   const { user } = useSelector((state) => state.auth);
@@ -98,7 +82,7 @@ function Tickets() {
     }
 
     setloading(false);
-  }, []);
+  }, [Type === 'ongoing']);
   useEffect(() => {
     if (isLoading) {
       setloading(true);
@@ -120,6 +104,7 @@ function Tickets() {
       setempty(false);
     }
   }, [closedData, tickets, ticketsData]);
+
   return (
     <div className='tickets'>
       <main className='tickets-card'>
@@ -142,7 +127,6 @@ function Tickets() {
                     checked={Type === 'pending'}
                     onClick={() => {
                       setType('pending');
-                      setiSREF(true);
                     }}
                     readOnly
                   />
@@ -155,7 +139,6 @@ function Tickets() {
                     checked={Type === 'ongoing'}
                     onClick={() => {
                       setType('ongoing');
-                      setiSREF(true);
                     }}
                     readOnly
                   />
@@ -168,7 +151,6 @@ function Tickets() {
                     checked={Type === 'complete'}
                     onClick={() => {
                       setType('complete');
-                      setiSREF(true);
                     }}
                     readOnly
                   />
@@ -256,8 +238,10 @@ function Tickets() {
                                   </td>
                                   <td>{ticket.product}</td>
                                   <td>
-                                    <div className='all-f-center'>
-                                      {ticket.status}
+                                    <div
+                                      className={`all-f-center  ${ticket.stage.status}`}
+                                    >
+                                      {ticket.stage.status}
                                     </div>
                                   </td>
                                   <td>
@@ -265,9 +249,11 @@ function Tickets() {
                                       to={`/viewticket/${ticket._id}`}
                                       className='all-f-center'
                                     >
-                                      <button className='all-btn-submit all-B-main'>
-                                        view
-                                      </button>
+                                      <div className='td-center'>
+                                        <button className='all-btn-submit all-B-main'>
+                                          view
+                                        </button>
+                                      </div>
                                     </Link>
                                   </td>
                                 </tr>
@@ -310,7 +296,7 @@ function Tickets() {
                                 </td>
                                 <td>{ticket.product}</td>
                                 <td>
-                                  <div className='all-f-center'>
+                                  <div className={activeClass}>
                                     {ticket.status}
                                   </div>
                                 </td>
@@ -319,9 +305,11 @@ function Tickets() {
                                     to={`/viewticket/${ticket._id}`}
                                     className='all-f-center'
                                   >
-                                    <button className='all-btn-submit all-B-main'>
-                                      view
-                                    </button>
+                                    <div className='td-center'>
+                                      <button className='all-btn-submit all-B-main'>
+                                        view
+                                      </button>
+                                    </div>
                                   </Link>
                                 </td>
                               </tr>

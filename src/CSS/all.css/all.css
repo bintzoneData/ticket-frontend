@@ -165,7 +165,7 @@
 .all-f-center {
   display: flex;
   justify-content: center;
-  all: unset;
+  text-decoration: none;
 }
 .all-form-input:focus {
   outline-color: #0474bc;
